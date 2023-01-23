@@ -1,0 +1,6 @@
+1. write logic / formula / Hints / any speacial thing
+2. main Code
+3. Time complexity / Space complexity
+4. write theory related to that algo in textbook
+5. Don't Invest too much time
+6. write only that questions from which u re leaning some new concept

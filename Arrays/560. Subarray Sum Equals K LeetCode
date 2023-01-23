@@ -1,0 +1,39 @@
+/*
+
+-> we have given a nums array and interger k we have to find no of subarrays whose sum equals k
+-> Brute force approach is simple to find all possible subarrays using two nested for loops O(N^2)
+-> This problem is based on calculating prefix sum
+
+-> Logic:
+we keep a count and sum variable starting at 0 also we maintain a unordered map and calculate sum by linearly iterating in Array when we 
+find (sum==k) increase count and  will find the (sum-k) key in map if found then increase count by map[sum-k] and then increse the sum index
+in map by 1 and lastly return count. 
+
+Code:)
+
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int n=nums.size();
+        if(n==0) return 0;
+        int sum=0;
+        int count=0;
+        unordered_map<int,int> mp;
+        for(int i=0;i<n;i++)
+        {
+            sum+=nums[i];
+            if(sum==k) count+=1;
+            
+            if(mp.find(sum-k)!=mp.end()) count+=mp[sum-k];
+            
+            mp[sum]+=1;
+        }
+        return count;
+    }
+};
+
+-> complexity
+T.C: O(N)
+S.C: O(N)
+
+*/
