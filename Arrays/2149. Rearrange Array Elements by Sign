@@ -1,0 +1,36 @@
+:) Logic
+The question is to rearrange the array in pair of +ve & -ve element by preserving the order in which they're present
+also +ve value should come first in pair.
+
+The logic is simple to keep two pointers one at index 0 and another at index 1 intially and traverse the array also 
+create an another vector of same size and whenever +ve value comes insert it in positive pointer index in new vector
+and increment the pointer by 2 do same when negative element comes.
+
+:) Code
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        int n=nums.size();
+        int positiveIndex=0, negativeIndex=1;
+        vector<int> resultArray(n);
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]>0)
+            {
+                resultArray[positiveIndex]=nums[i];
+                positiveIndex+=2;
+            }
+            else
+            {
+                resultArray[negativeIndex]=nums[i];
+                negativeIndex+=2;
+            }
+        }
+        return resultArray;
+    }
+};
+
+:) complexity
+T.C:O(N)
+S.C: O(N)
