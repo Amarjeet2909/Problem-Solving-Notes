@@ -1,0 +1,35 @@
+:) Logic
+The logic is to keep two pointers slow and fast intialized to head node, Increment slow by 1 and fast by 2 once they 
+encounter then take one another pointer intialized to head and move the new pointer as well as slow pointer by 1, the 
+node where these two pointers will meet is ou answer i.e: the sarting point of cycle.
+
+:) Code
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        ListNode *res = NULL;
+        if((head==NULL) || (head->next==NULL)) return res;
+        ListNode *fast = head;
+        ListNode *slow = head;
+        while((fast->next != NULL) && (fast->next->next != NULL))
+        {
+           fast = fast->next->next;
+           slow = slow->next;
+        if(fast == slow)
+        {
+            ListNode *check = head;
+            while(check != slow)
+            {
+                check=check->next;
+                slow=slow->next;
+            }
+            return slow;
+        }
+        }
+        return res;
+    }
+};
+
+:) Complexity
+T.C: O(N)
+S.C: O(1)
