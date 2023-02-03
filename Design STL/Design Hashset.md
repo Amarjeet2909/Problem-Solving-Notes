@@ -1,11 +1,10 @@
-//BruteForce(Naive Approach)
-/*
-  Make an array[given range +1] of indexes as key and mark them all initially with 0 
-  addition of key => just put arr[key]=1
- removal of keyt => just put arr[key]=0
- contains => agar key me 0 hai to false nahi to true
+BruteForce(Naive Approach) :-
+ 1) Make an array[given range +1] of indexes as key and mark them all initially with 0 
+2)addition of key => just put arr[key]=1
+ 3)removal of keyt => just put arr[key]=0
+ 4) contains => agar key me 0 hai to false nahi to true
+ 
 Disadvantage-> this aproach will not work if the range of number is very big or it conatins  negative keys
-*/
 ```cpp
  class MyHashSet {
 public:
