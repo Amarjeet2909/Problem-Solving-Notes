@@ -1,6 +1,8 @@
-Add 1 to linked list :-
+Add 1 to linked list problem
 Basic Intution :- 
-Go to the last node of LinkedList and add 1 But if one addition it is > 9 then we have to add carry 1 to its previous node and so on so we have to traverse many times 
+
+Go to the last node of LinkedList and add 1 But if one addition it is > 9 then we have to add carry 1 to its previous node and so on so we have to traverse many times
+ 
 OPTIMIZED Approach :-
 1) First revese the whole linked list that reduces down to only single traversal.
 2) Take two pointer Prev and current on revsrse list and and carry variable initilized with 0.
