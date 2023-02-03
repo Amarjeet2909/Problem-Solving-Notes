@@ -3,6 +3,7 @@ The logic is to initially find the middle of the linked list by tortoise method 
 the middle node and then compare first half and second half using pointers if they match then LL is palindrome otherwise not.
 
 Code:)
+```cpp
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -44,7 +45,7 @@ public:
             return dummy;
     }
 };
-
+```
 Complexity:
 T.C: O(N)
 S.C: O(1)

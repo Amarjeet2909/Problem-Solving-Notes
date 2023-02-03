@@ -7,6 +7,7 @@ meet at same position that means there is a cycle.
 
 
 :) Code
+```cpp
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
@@ -22,7 +23,7 @@ public:
         return false;
     }
 };
-
+```
 :) Complexity
 T.C: O(N)
 S.C: O(1)
