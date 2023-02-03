@@ -8,8 +8,7 @@
 Disadvantage-> this aproach will not work if the range of number is very big 
 */
 //Code for first approach
-#include<bits/stdc++.h>
-using namespace std;
+
 class MyHashMap {
 public:
     // method 1 naive
