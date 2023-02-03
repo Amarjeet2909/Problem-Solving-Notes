@@ -1,9 +1,9 @@
-BruteForce(Naive Approach)
-  1)Make an array[given range +1] of indexes as key and mark them all initially with -1 
+BruteForce(Naive Approach) :-
+  1) Make an array[given range +1] of indexes as key and mark them all initially with -1 
 
-  2)Addition of value / updation of value in  key => just put arr[key]=value
-  
-  3)Removal of keyt => just put arr[key]=-1
+  2) Addition of value / updation of value in  key => just put arr[key]=value
+
+  3) Removal of keyt => just put arr[key]=-1
     contains => agar key me -1 hai to false nahi to true
 
 Disadvantage-> this aproach will not work if the range of number is very big 
