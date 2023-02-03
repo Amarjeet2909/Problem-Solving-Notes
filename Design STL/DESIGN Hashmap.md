@@ -1,8 +1,8 @@
 BruteForce(Naive Approach)
-  Make an array[given range +1] of indexes as key and mark them all initially with -1 
-  addition of value / updation of value in  key => just put arr[key]=value
- removal of keyt => just put arr[key]=-1
- contains => agar key me -1 hai to false nahi to true
+  1.Make an array[given range +1] of indexes as key and mark them all initially with -1 
+  2.Addition of value / updation of value in  key => just put arr[key]=value
+  3.Removal of keyt => just put arr[key]=-1
+    contains => agar key me -1 hai to false nahi to true
 
 Disadvantage-> this aproach will not work if the range of number is very big 
 
@@ -32,14 +32,14 @@ public:
     }
 };
 ```
-/*
-Approach 2 using LinkedList
+
+Approach 2 using LinkedList:-
   Better approach using creation of hash function and store then in array of list of pair<int,int>
   1) Create array of list<pair<int,int>>(as wish)  => less size more collisions more the size less collisons (take optimal)
   2) Create a getindex function => which return key%size;
   3) Create a search function which search key in the list use STL iterator to search key in the list of array and return that iterator 
   4) New key value put krne se pehle remove old one using remove function
-*/
+
 
 ```cpp
  class MyHashMap {
