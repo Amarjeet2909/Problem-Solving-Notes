@@ -6,8 +6,8 @@ BruteForce(Naive Approach)
 
 Disadvantage-> this aproach will not work if the range of number is very big 
 
-
-int class MyHashMap {
+```cpp
+ class MyHashMap {
 public:
    vector<int> arr;
     int size;
@@ -31,7 +31,7 @@ public:
         arr[key]= -1;
     }
 };
-
+```
 /*
 Approach 2 using LinkedList
   Better approach using creation of hash function and store then in array of list of pair<int,int>
@@ -41,8 +41,8 @@ Approach 2 using LinkedList
   4) New key value put krne se pehle remove old one using remove function
 */
 
-
-int class MyHashMap {
+```cpp
+ class MyHashMap {
 public:
     
     list<pair<int,int>> arr[1001];  //creatig a vector of list of pair of int
@@ -106,3 +106,4 @@ public:
         
     }
 };
+```

@@ -6,10 +6,8 @@
  contains => agar key me 0 hai to false nahi to true
 Disadvantage-> this aproach will not work if the range of number is very big or it conatins  negative keys
 */
-
-
-//code 
-int class MyHashSet {
+```cpp
+ class MyHashSet {
 public:
     
     int hash[1000001] = {0};
@@ -31,16 +29,15 @@ public:
             return false;
     }
 };
-
-/*  Approach 2 using Linkedlist
+```
+ Approach 2 using Linkedlist :-
   Better approach using creation of hash function and store then in array of list
   1) Create array of lists size(as wish)  => less size more collisions more the size less collisons (take optimal)
   2) Create a getindex function => which return key%size;
   3) Create a search function which search key in the list use STL function Find for seaching a key 
 
-*/
-
-int class MyHashSet {
+```cpp
+ class MyHashSet {
 public:
     
     list<int> hash[10001];
@@ -96,3 +93,4 @@ public:
         
     }
 };
+```
