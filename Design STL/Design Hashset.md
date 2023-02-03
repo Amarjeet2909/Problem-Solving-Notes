@@ -8,8 +8,8 @@ Disadvantage-> this aproach will not work if the range of number is very big or 
 */
 
 
-//code
-class MyHashSet {
+//code 
+int class MyHashSet {
 public:
     
     int hash[1000001] = {0};
@@ -40,7 +40,7 @@ public:
 
 */
 
-class MyHashSet {
+int class MyHashSet {
 public:
     
     list<int> hash[10001];

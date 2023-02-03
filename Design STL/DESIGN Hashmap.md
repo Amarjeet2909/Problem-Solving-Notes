@@ -1,13 +1,13 @@
-//BruteForce(Naive Approach)
+BruteForce(Naive Approach)
   Make an array[given range +1] of indexes as key and mark them all initially with -1 
   addition of value / updation of value in  key => just put arr[key]=value
  removal of keyt => just put arr[key]=-1
  contains => agar key me -1 hai to false nahi to true
 
 Disadvantage-> this aproach will not work if the range of number is very big 
-//Code for first approach
 
-class MyHashMap {
+
+int class MyHashMap {
 public:
    vector<int> arr;
     int size;
@@ -40,8 +40,9 @@ Approach 2 using LinkedList
   3) Create a search function which search key in the list use STL iterator to search key in the list of array and return that iterator 
   4) New key value put krne se pehle remove old one using remove function
 */
-// code
-class MyHashMap {
+
+
+int class MyHashMap {
 public:
     
     list<pair<int,int>> arr[1001];  //creatig a vector of list of pair of int
