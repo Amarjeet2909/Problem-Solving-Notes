@@ -1,17 +1,14 @@
 //BruteForce(Naive Approach)
-/*
   Make an array[given range +1] of indexes as key and mark them all initially with -1 
   addition of value / updation of value in  key => just put arr[key]=value
  removal of keyt => just put arr[key]=-1
  contains => agar key me -1 hai to false nahi to true
 
 Disadvantage-> this aproach will not work if the range of number is very big 
-*/
 //Code for first approach
 
 class MyHashMap {
 public:
-    // method 1 naive
    vector<int> arr;
     int size;
     MyHashMap() {
@@ -20,8 +17,6 @@ public:
         fill(arr.begin(),arr.end(),-1); //fill function fill values with iterator
         
     }
-    
-
     
     void put(int key, int value) {
         arr[key]=value;
@@ -38,7 +33,7 @@ public:
 };
 
 /*
-Approach 2
+Approach 2 using LinkedList
   Better approach using creation of hash function and store then in array of list of pair<int,int>
   1) Create array of list<pair<int,int>>(as wish)  => less size more collisions more the size less collisons (take optimal)
   2) Create a getindex function => which return key%size;
@@ -73,10 +68,7 @@ public:
               it++;  
         }
         
-        return it;
-        
-        
-        
+        return it;  
         
     }
     

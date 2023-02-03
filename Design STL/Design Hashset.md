@@ -4,13 +4,11 @@
   addition of key => just put arr[key]=1
  removal of keyt => just put arr[key]=0
  contains => agar key me 0 hai to false nahi to true
-
 Disadvantage-> this aproach will not work if the range of number is very big or it conatins  negative keys
 */
 
 
-//BruteForce solution
-
+//code
 class MyHashSet {
 public:
     
@@ -34,23 +32,13 @@ public:
     }
 };
 
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * MyHashSet* obj = new MyHashSet();
- * obj->add(key);
- * obj->remove(key);
- * bool param_3 = obj->contains(key);
- */
-
-/*
+/*  Approach 2 using Linkedlist
   Better approach using creation of hash function and store then in array of list
   1) Create array of lists size(as wish)  => less size more collisions more the size less collisons (take optimal)
   2) Create a getindex function => which return key%size;
   3) Create a search function which search key in the list use STL function Find for seaching a key 
 
 */
-#include<bits/stdc++.h>
-using namespace std;
 
 class MyHashSet {
 public:
