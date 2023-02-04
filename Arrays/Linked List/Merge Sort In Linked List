@@ -1,0 +1,54 @@
+:) Logic
+The Logic is same as we apply merge sort in Array.
+
+:) Code
+class Solution {
+public:
+    ListNode* findMidNode(ListNode *head)
+    {
+        ListNode *fast = head;
+        ListNode *slow = head;
+        while((fast->next!=NULL)&&(fast->next->next!=NULL))
+        {
+            fast=fast->next->next;
+            slow=slow->next;
+        }
+        ListNode* midNode = slow->next;
+        slow->next = NULL;
+        return midNode;
+    }
+
+    ListNode* mergeList(ListNode* left, ListNode* right)
+    {
+        ListNode* dummyNode = new ListNode(-1);
+        ListNode* current = dummyNode;
+        while((left != NULL)&&(right != NULL))
+        {
+            if(left->val <= right->val)
+            {
+                current->next = left;
+                left = left->next;
+            }
+            else
+            {
+                current->next = right;
+                right=right->next;
+            }
+            current = current->next;
+        }
+        current->next = left != NULL ? left : right ;
+        return dummyNode->next;
+    }
+
+    ListNode* sortList(ListNode* head) {
+        if((head == NULL)||(head->next==NULL)) return head;
+        ListNode *mid = findMidNode(head);
+        ListNode *left = sortList(head);
+        ListNode *right = sortList(mid);
+        return mergeList(left, right); 
+    }
+};
+
+:) Complexity
+T.C: O(N log N)
+S.C: O(1)

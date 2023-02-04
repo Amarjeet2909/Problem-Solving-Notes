@@ -1,0 +1,65 @@
+:) Approach:
+Q: Given a linked list of elements 0,1 and 2 we have to sort such that first all 0 come then 1 and then 2.
+
+- One approach is to count the no of 0,1 and 2 and then modify the actual linked list
+:) Another Approach is:
+- Create 3 seperate list for them but not using extra space but by modifying link
+
+:) Code 
+{
+    public:
+    void InsertAtTail(Node* &tail, Node *curr)
+    {
+        tail->next=curr;
+        tail=curr;
+    }
+    //Function to sort a linked list of 0s, 1s and 2s.
+    Node* segregate(Node *head) {
+        
+        // Add code here
+        Node *zeroHead=new Node(-1);
+        Node *zeroTail=zeroHead;
+        Node *oneHead=new Node(-1);
+        Node *oneTail=oneHead;
+        Node *twoHead=new Node(-1);
+        Node *twoTail=twoHead;
+        
+        Node *curr = head;
+        while(curr!=NULL)
+        {
+            int temp = curr->data;
+            if(temp==0)
+            {
+                InsertAtTail(zeroTail,curr);
+            }
+            else if(temp==1)
+            {
+                InsertAtTail(oneTail,curr);
+            }
+            else if(temp==2)
+            {
+                InsertAtTail(twoTail,curr);
+            }
+            curr=curr->next;
+        }
+        if(oneHead->next != NULL)
+        zeroTail->next=oneHead->next;
+        else
+        zeroTail->next=twoHead->next;
+        
+        oneTail->next=twoHead->next;
+        twoTail->next=NULL;
+        
+        head=zeroHead->next;
+        
+        delete zeroHead;
+        delete oneHead;
+        delete twoHead;
+        
+        return head;
+    }
+};
+
+:) Complexity
+T.C: O(N)
+S.C: O(1)

@@ -1,0 +1,40 @@
+:) Logic
+In question we have to reaarange the LL such that odd indices node comes first then nodes with even index also mainting
+the original order in which they were.
+
+The logic is to keep 4 pointers oddHead, oddTail, evenHead, evenTail basically using these variables we will be making two seperate linked list one for odd nodes and another for even nodes without using extra spaces since we will be modifying the links in actual LL. initially oddHead and oddTail will be intialized to head and evenHead, evenTail will be initialized to head->next. after that for even index we will link that index node with evenTail->next and for odd index we link it to oddTail->next. at the last we will link oddTail and evenHead and will return oddHead.
+
+:) Code
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if((head == NULL) || (head->next == NULL) || (head->next->next == NULL)) return head;
+        ListNode *oddHead = head, *oddTail = head;
+        ListNode *evenHead = head->next, *evenTail = head->next;
+        int count = 3;
+        head = head->next->next;
+        while(head != NULL)
+        {
+        if(count%2 == 0)
+        {
+            evenTail->next = head;
+            evenTail=evenTail->next;
+        }
+        else
+        {
+            oddTail->next = head;
+            oddTail=oddTail->next;
+        }
+            count++;
+            head=head->next;
+        }
+        oddTail->next=evenHead;
+        evenTail->next = NULL;
+
+        return oddHead;
+    }
+};
+
+:) Complexity
+T.C: O(N)
+S.C: O(1)

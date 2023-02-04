@@ -1,0 +1,31 @@
+:) Logic
+-Approach 1: count the length of 1st and 2nd linked list respectively and then store the diff b/w the counts then move
+the longest linked list by diff (because by this both linked list size become same) then again keep one pointer a LL1 
+and another pointer at longest LL (at the diff moved point) and then move both pointer simeltanously until both become 
+NULL and compare the nodes if it's equal then return that node otherwise keep moving.
+
+-Approach 2(Best): Keep one-one pointer at the head of both linked list if any pointer become null then 
+point it on head of another ll head else keep moving it by 1 until two nodes become equal. the intuiton behind keeping the
+pointer of another linked list on another when it reaches NULL is to remove the difference.
+
+:) Code
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        if((headA==NULL)||(headB==NULL)) return NULL;
+        ListNode *dummyA = headA;
+        ListNode *dummyB = headB;
+        while(dummyA != dummyB)
+        {
+            if(dummyA==NULL) dummyA=headB;
+            else dummyA=dummyA->next;
+            if(dummyB==NULL) dummyB=headA;
+            else dummyB=dummyB->next;
+        }
+        return dummyA;
+    }
+};
+
+:) Complexity
+T.C: O(M+N)
+S.C: O(1)

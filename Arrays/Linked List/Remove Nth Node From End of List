@@ -1,0 +1,31 @@
+:) Logic
+The Idea is keep one fast, slow pointer initialized to head and move fast by n(given) steps and then again move fast
+as well as slow pointrs by 1 until fast reaches NULL. at this point we have to delete slow->next node.
+
+:) Code
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        ListNode *dummyNode = new ListNode();
+        dummyNode->next = head;
+        ListNode *fast = dummyNode;
+        ListNode *slow = dummyNode;
+
+        for(int i=1;i<=n;i++)
+        fast=fast->next;
+
+        while(fast->next != NULL)
+        {
+            fast=fast->next;
+            slow=slow->next;
+        }
+
+        slow->next = slow->next->next;
+
+        return dummyNode->next;
+    }
+};
+
+:) Complexity
+T.C: O(N)
+S.C: O(1)
