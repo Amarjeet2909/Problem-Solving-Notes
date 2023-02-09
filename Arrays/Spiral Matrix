@@ -1,0 +1,51 @@
+LogiC:)
+This question is based on simulation by observising the patten we need to make algo.
+-> Take 5 variables Top, Down , Left & Right and Direction=0
+-> Place top at Matrix[0][0], Down at last row, left at 1st column and right at last column . Use these variables as boundary
+-> When direction = 0 move left to right in top pointer row when direction = 1 move top to down in right pointer column
+   When direction = 2 move right to left in down pointer row and when direction = 3 move down to top in left pointer column.
+
+Video Ref: https://www.youtube.com/watch?v=1ZGJzvkcLsA
+
+Code:)
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int top=0, down=matrix.size()-1, left=0, right=matrix[0].size()-1;
+        int direction=0;
+        vector<int> res;
+        while((top<=down)&&(left<=right))
+        {
+            if(direction==0)
+            {
+                for(int i=left;i<=right;i++)
+                res.push_back(matrix[top][i]);
+                top+=1;
+            }
+            else if(direction==1)
+            {
+                for(int i=top;i<=down;i++)
+                res.push_back(matrix[i][right]);
+                right-=1;
+            }
+            else if(direction==2)
+            {
+                for(int i=right;i>=left;i--)
+                res.push_back(matrix[down][i]);
+                down-=1;
+            }
+            else if(direction==3)
+            {
+                for(int i=down;i>=top;i--)
+                res.push_back(matrix[i][left]);
+                left+=1;
+            }
+            direction=(direction+1)%4;
+        }
+        return res;
+    }
+};
+
+:) Complexity
+T.C: O(N)
+S.C: O(N)
