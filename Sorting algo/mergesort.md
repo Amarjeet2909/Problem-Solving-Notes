@@ -1,6 +1,8 @@
 :) Logic 
-it is based on the divide and merge algorithm so first divide the given array into smallersubproblems with sorted order and finally merge it .
--> recursion take care for mergesort the two halfs .
+it is based on the divide and merge algorithm so first divide the given array into smallersubproblems with sorted order and finally merge it .\\
+
+-> recursion take care for mergesort the two halfs .\\
+
 -> my work is only write merge function and call it after recurion done its work.
 
 
@@ -79,5 +81,6 @@ class Solution
 
 ```
 
-Tc - O(nlogn).
+Tc - O(nlogn).\\
+
 Sc - O(n) ->  required extra space for merge function  
