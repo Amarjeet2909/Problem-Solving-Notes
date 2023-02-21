@@ -1,0 +1,50 @@
+We have to Implement atoi() fun which converts a string into digits
+
+Logic:) The logic can be simply understable by code: Since there is some conditions also in this prob read from leetcode
+
+class Solution {
+    public :
+    int myAtoi(string s) {
+        if(s.length()==0) return 0;
+
+        // Escaping Initial white spaces from string (if any)
+         int i=0;
+         while(i<s.size() && s[i]== ' ') 
+         {
+             i++;
+         } 
+         // Modifying our string to escaped white spaces string    
+         s = s.substr(i); //i ---> last of string
+        
+        // to check sign
+        int sign = +1;
+        // to store the result
+        long ans = 0;
+        
+        if(s[0] == '-') sign = -1;
+        
+        int MAX = INT_MAX, MIN = INT_MIN;
+        // if first char is + or - in string then start i from 1 otherwise from 0 since we have already checked sign above
+        i = (s[0] == '+' || s[0] == '-') ? 1 : 0;
+		
+        // Doing actual conversion
+        while(i < s.length()) {
+            // if char is white space or not a digit then simply break
+            if(s[0] == ' ' || !isdigit(s[i])) break;
+            
+            ans = ans * 10 + s[i]-'0';
+            // Checking overflow and Underflow
+            if(sign == -1 && -1*ans < MIN) return MIN;
+            if(sign == 1 && ans > MAX) return MAX;
+            
+            i++;
+        }
+        
+        // returing result by multiplying with sign
+        return (int)(sign*ans);
+    }
+};
+
+:) Complexity:
+T.C: O(N)
+S.C: O(1)

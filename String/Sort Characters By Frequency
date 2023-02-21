@@ -1,0 +1,34 @@
+Given a string of alphabets we have to rearrange it a/c to the decreaing order of frequency of characters
+
+logic:) The logic is to count the no of occurances of characters in the string and map it then sort it a/c to the frequency
+and construct the array. Understand it using Code
+
+code:)
+class Solution {
+public:
+    string frequencySort(string s) {
+        // Creating vector of pair of size 122 initialized with 0 since all the upper & lower case letters will come in 
+        // the range of 0-122
+        vector<pair<int,char>> hash('z'+1,{0,0});
+        // mapping it and counting the frequencies
+        for(char c:s)
+        hash[c] = {hash[c].first+1,c};
+
+        // sorting a/c to the frequency
+        sort(hash.begin(),hash.end());
+
+        // making final result string
+        string result = "";
+        for(auto it: hash)
+        {
+            // string() is a fun which takes 2 params one the no of times the char has to repeat and second the char itself
+            // So basically this fun will contruct string for a particular char a/c to no of times a  char is repeating
+            result = string(it.first,it.second)+result;
+        }
+        return result;
+    }
+};
+
+:) Complexity:
+T.C: O(N log N)
+S.C: O(N)

@@ -6,7 +6,7 @@
 
 -> Logic:
 we keep a count and sum variable starting at 0 also we maintain a unordered map and calculate sum by linearly iterating in Array when we 
-find (sum==k) increase count and  will find the (sum-k) key in map if found then increase count by map[sum-k] and then increse the sum index
+find (sum==k) increase count and will find the (sum-k) key in map if found then increase count by map[sum-k] and then increse the sum index
 in map by 1 and lastly return count. 
 
 Code:)
