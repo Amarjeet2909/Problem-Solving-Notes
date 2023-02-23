@@ -1,0 +1,35 @@
+Problem: https://leetcode.com/problems/happy-number/description/
+
+A numer is happy if we keep calculating sum of the squares of its digits and replace the no with it and the number becomes 1.
+
+Logic:) The problem can be efficently solved using Floyd's cycle detection algo which uses the concept of slow and fast 
+pointer when the fast and slow pointer meet we stop.
+
+Code:)
+class Solution {
+public:
+    int help(int n)
+    {
+        int sum=0;
+        while(n!=0)
+        {
+            int temp=n%10;
+            sum+=(temp*temp);
+            n/=10;
+        }
+        return sum;
+    }
+    bool isHappy(int n) 
+    {
+        int slow=n, fast=n;
+        do
+        {
+            // fast and slow pointer concept
+            slow=help(slow);
+            fast=help(help(fast));
+        }
+        while(fast!=slow);
+
+        return fast==1;
+    }
+};
