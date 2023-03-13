@@ -1,0 +1,46 @@
+-> Given a matrix, matrix[i][j]=1 means there is path b/w i & j otherwise it's 0. we have to find no of different components
+of graph or we say number of connected components
+
+-> First with Given path matrix we create the adjacency list then apply dfs trversal to every node how much time the 
+dfs traversal will be called through the for loop will be our ans.
+
+:) Code:
+class Solution {
+public:
+    void dfs(int node, vector<int> adjList[], vector<int> &vis){
+        vis[node]=1;
+        for(auto it : adjList[node]){
+            if(!vis[it]){
+                dfs(it,adjList,vis);
+            }
+        }
+    }
+
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int n=isConnected.size();
+        vector<int> vis(n,0);
+        vector<int> adjList[n];
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(isConnected[i][j]==1 && i!=j){
+                    adjList[i].push_back(j);
+                    adjList[j].push_back(i);
+                }
+            }
+        }
+
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(!vis[i]){
+                count++;
+                dfs(i,adjList,vis);
+            }
+        }
+        return count;
+    }
+};
+
+Complexity:)
+T.C: O(N)+O(N+2E) ~~ O(N)
+S.C: O(N) for vis array + O(N) for dfs recursive call stack
