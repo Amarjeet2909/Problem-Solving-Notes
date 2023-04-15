@@ -1,0 +1,35 @@
+-> In this question, a 2D matrix is given we have to simply fill the connected 4-directionally cells (top,down,left,right) with
+the newColor where existing color is initial color and the process should continue until it is not touching any such cell.
+
+-> we will use bfs here.
+
+Code:)
+class Solution {
+private:
+void dfs(vector<vector<int>> image, vector<vector<int>> &ans, int row, int col, int color, int delRow[], int delCol[], int initCol)
+{
+    ans[row][col] = color;
+    int n = image.size();
+    int m = image[0].size();
+    for(int i=0;i<4;i++){
+        int nrow = row+delRow[i];
+        int ncol = col+delCol[i];
+
+        if((nrow>=0 && nrow<n) && (ncol>=0 && ncol<m) && (image[nrow][ncol]==initCol && ans[nrow][ncol]!=color))
+        dfs(image,ans,nrow,ncol,color,delRow,delCol,initCol);
+    }
+}
+public:
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        int initCol = image[sr][sc];
+        vector<vector<int>> ans = image;
+        int delRow[] = {-1,0,+1,0};
+        int delCol[] = {0,+1,0,-1};
+        dfs(image,ans,sr,sc,color,delRow,delCol,initCol);
+        return ans;
+    }
+};
+
+Complexity:) 
+T.C: N * M*N ~ O(M*N)
+S.C: O(M*N) to store the data in ans + O(N) stack space for recursion.
