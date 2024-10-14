@@ -1,0 +1,7 @@
+D:\Programming\Boldtek\Hello\Hello\bin\Debug\Hello.exe.config
+D:\Programming\Boldtek\Hello\Hello\bin\Debug\Hello.exe
+D:\Programming\Boldtek\Hello\Hello\bin\Debug\Hello.pdb
+D:\Programming\Boldtek\Hello\Hello\obj\Debug\Hello.csproj.AssemblyReference.cache
+D:\Programming\Boldtek\Hello\Hello\obj\Debug\Hello.csproj.CoreCompileInputs.cache
+D:\Programming\Boldtek\Hello\Hello\obj\Debug\Hello.exe
+D:\Programming\Boldtek\Hello\Hello\obj\Debug\Hello.pdb

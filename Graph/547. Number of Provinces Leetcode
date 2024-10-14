@@ -2,7 +2,7 @@
 of graph or we say number of connected components
 
 -> First with Given path matrix we create the adjacency list then apply dfs trversal to every node how much time the 
-dfs traversal will be called through the for loop will be our ans.
+dfs traversal will be called through the for loop will be our ans. 
 
 :) Code:
 class Solution {
